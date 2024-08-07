@@ -1,0 +1,112 @@
+ABSTRACT DATA TYPE DEFINITION
+------------------------------
+->Stacks - LIFO
+->Queues - FIFO
+
+const int CAPACITY = 50;
+typedef struct
+{
+     // assuming the data type people have already been defined
+    person people[capacity];
+    int size;
+}
+stack;
+
+
+STRUCTURE DEFINITION
+---------------------
+Linked list.
+-----------
+typedef struct node
+{
+    int number;
+    struct node* next;
+}
+node;
+
+Tree.
+----
+typedef struct node
+{
+    int number;
+    struct node* left;
+    struct node* right;
+}
+node;
+
+Dictionary.
+----------
+typedef struct node
+{
+    char* name;
+    char* number;
+    struct node* next;
+}
+node;
+
+Trie.
+-----
+typedef struct node
+{
+    char* number;
+    struct node* childern[26];
+}
+node;
+================================================================+
+IMPLEMENTATION OF A BINARY SEARCH TREE
+
+First the tree must sorted while prepending/appending
+
+Binary Search Tree - BST.
+bool search(node *tree, int number)
+{
+    if (tree == NULL) // base case
+    {
+        return false;
+    }
+    else if (number < tree->number)
+    {
+        return search(tree->left, number);
+    }
+    else if (number > tree->number)
+    {
+        return search(tree->right, number);
+    }
+    else
+    {
+        return true;
+    }
+}
+-----------------------------------------------
+OTHER ALGORITHMS
+
+SORT ALGORITHMS
+--------------
+Merge sort algorithm.
+if only one number // base case
+    quit
+else
+    sort left half of numbers
+    sort right half of numbers
+    merge sorted halves
+
+Bubble sort algorithm
+--
+
+SEARCH ALGORITHMS
+-----------------
+Binary search algorithm.
+if no doors left // base case
+    return false;
+if 50 behind middle door
+    return false;
+else if 50 < middle door
+    search left half
+else if 50 > middle door
+    search right half
+
+Linear search algorithm.
+for each door from left to right
+    if 50 is behind door
+        return tru
+return false
